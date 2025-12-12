@@ -5,6 +5,7 @@ import ModeSelector from "@/components/timer/ModeSelector";
 import ControlButtons from "@/components/timer/ControlButtons";
 import TaskList from "@/components/timer/TaskList";
 import PomodoroStats from "@/components/timer/PomodoroStats";
+import PomodoroGuide from "@/components/PomodoroGuide";
 import { Timer } from "lucide-react";
 
 const Index = () => {
@@ -60,21 +61,21 @@ const Index = () => {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-8 min-h-screen flex flex-col">
+      <div className="relative z-10 container mx-auto px-4 py-8">
         {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center justify-center gap-3 mb-8"
         >
-          <Timer className="w-8 h-8 text-foreground" />
+          <Timer className="w-8 h-8 text-foreground" aria-hidden="true" />
           <h1 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">
-            FocusFlow
+            FocusFlow Pomodoro Timer
           </h1>
         </motion.header>
 
-        {/* Main content */}
-        <div className="flex-1 flex flex-col items-center justify-center gap-8">
+        {/* Hero Section with Timer */}
+        <section aria-label="Pomodoro Timer" className="min-h-[80vh] flex flex-col items-center justify-center gap-8">
           {/* Mode selector */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -139,24 +140,34 @@ const Index = () => {
             currentSession={currentSession}
             totalFocusTime={totalFocusTime}
           />
-        </div>
 
-        {/* Task list */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mt-8 flex justify-center"
-        >
-          <TaskList
-            tasks={tasks}
-            onAddTask={addTask}
-            onToggleTask={toggleTask}
-            onDeleteTask={deleteTask}
-            currentTaskId={currentTaskId}
-            onSelectTask={selectTask}
-          />
-        </motion.div>
+          {/* Task list */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="mt-8 w-full flex justify-center"
+          >
+            <TaskList
+              tasks={tasks}
+              onAddTask={addTask}
+              onToggleTask={toggleTask}
+              onDeleteTask={deleteTask}
+              currentTaskId={currentTaskId}
+              onSelectTask={selectTask}
+            />
+          </motion.div>
+        </section>
+
+        {/* SEO Content Guide Section */}
+        <PomodoroGuide />
+
+        {/* Footer */}
+        <footer className="py-8 text-center border-t border-foreground/10 mt-16">
+          <p className="text-sm text-foreground/50">
+            © 2025 FocusFlow. Free Pomodoro Timer for students, developers, and professionals.
+          </p>
+        </footer>
       </div>
     </main>
   );
