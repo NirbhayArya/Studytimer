@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { usePomodoro } from "@/hooks/usePomodoro";
-import TimerCircle from "@/components/timer/TimerCircle";
+import TimerCard from "@/components/timer/TimerCard";
 import ModeSelector from "@/components/timer/ModeSelector";
 import ControlButtons from "@/components/timer/ControlButtons";
 import TaskList from "@/components/timer/TaskList";
@@ -90,10 +90,11 @@ const Index = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <TimerCircle
+            <TimerCard
               progress={progress}
               timeDisplay={timeDisplay}
               isRunning={isRunning}
+              mode={mode}
             />
           </motion.div>
 
