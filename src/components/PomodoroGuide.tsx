@@ -8,6 +8,13 @@ const benefits = [
   { icon: Target, title: "Increases Motivation", desc: "Small wins build momentum" },
 ];
 
+const variations = [
+  { num: "01", title: "50/10 Method", desc: "Best for deep work sessions" },
+  { num: "02", title: "52/17 Method", desc: "Used by productivity researchers." },
+  { num: "03", title: "Flowtime Technique", desc: "Flexible intervals based on natural focus rhythms" },
+  { num: "04", title: "20/5 Study Method", desc: "Ideal for students and memory-based learning." },
+
+];
 const steps = [
   { num: "01", title: "Choose One Task", desc: "Pick a single clear task to focus on" },
   { num: "02", title: "Remove Distractions", desc: "Close tabs, silence phone, clear desk" },
@@ -34,14 +41,29 @@ const PomodoroGuide = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+            Pomodoro Technique Guide: Boost Productivity & Time Management
+          </h1>
+          <h2 id="guide-heading" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Why Staying Focused Is So Hard in 2026?
+          </h2>
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed mb-8">
+            Constant notifications, endless tabs, dopamine overload, and multitasking make it harder than ever to
+            stay focused. Even when you sit down to work, your mind jumps between tasks — lowering productivity
+            and increasing mental fatigue.<br />
+            <br />
+            The Pomodoro Technique solves this by using short, structured focus intervals backed by cognitive
+            psychology. It helps you study longer, reduce procrastination, and stay consistent without burning out.
+          </p>
           <h2 id="guide-heading" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             What Is the Pomodoro Technique?
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed">
-            The Pomodoro Technique is a time-management method created by Francesco Cirillo 
-            that breaks work into focused intervals separated by short breaks. It uses 
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed mb-8">
+            The Pomodoro Technique is a time-management method created by Francesco Cirillo
+            that breaks work into focused intervals separated by short breaks. It uses
             cognitive psychology to help you study longer, reduce procrastination, and stay consistent.
           </p>
+
         </motion.div>
 
         {/* Traditional Cycle */}
@@ -79,7 +101,7 @@ const PomodoroGuide = () => {
           className="mb-12"
         >
           <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-            Why the Pomodoro Technique Works
+            Why the Pomodoro Technique Works?
           </h3>
           <div className="grid sm:grid-cols-2 gap-4">
             {benefits.map((benefit, i) => (
@@ -138,7 +160,7 @@ const PomodoroGuide = () => {
           className="mb-12"
         >
           <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-            How to Use the Pomodoro Technique
+            How to Use the Pomodoro Technique?
           </h3>
           <div className="space-y-3">
             {steps.map((step, i) => (
@@ -154,6 +176,35 @@ const PomodoroGuide = () => {
                 <div>
                   <h4 className="font-semibold text-foreground">{step.title}</h4>
                   <p className="text-sm text-foreground/60">{step.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+        {/* Variations */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+            What are the variations of Pomodoro Technique?
+          </h3>
+          <div className="space-y-3">
+            {variations.map((variation, i) => (
+              <motion.div
+                key={variation.num}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="glass-card rounded-xl p-4 flex items-center gap-4"
+              >
+                <span className="text-2xl font-bold font-mono text-foreground/30">{variation.num}</span>
+                <div>
+                  <h4 className="font-semibold text-foreground">{variation.title}</h4>
+                  <p className="text-sm text-foreground/60">{variation.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -175,8 +226,8 @@ const PomodoroGuide = () => {
                 Is the Pomodoro Technique scientifically proven?
               </h4>
               <p className="text-sm text-foreground/70 leading-relaxed">
-                Yes! The technique is backed by cognitive psychology research showing that 
-                regular breaks improve concentration and prevent mental fatigue. Studies show 
+                Yes! The technique is backed by cognitive psychology research showing that
+                regular breaks improve concentration and prevent mental fatigue. Studies show
                 that focused work intervals followed by rest enhance memory retention and learning.
               </p>
             </article>
@@ -185,8 +236,8 @@ const PomodoroGuide = () => {
                 Can Pomodoro help with ADHD?
               </h4>
               <p className="text-sm text-foreground/70 leading-relaxed">
-                Absolutely! The structured intervals and frequent breaks help people with ADHD 
-                maintain focus by breaking tasks into manageable chunks. The timer creates 
+                Absolutely! The structured intervals and frequent breaks help people with ADHD
+                maintain focus by breaking tasks into manageable chunks. The timer creates
                 urgency and the breaks prevent overwhelm.
               </p>
             </article>
@@ -195,9 +246,33 @@ const PomodoroGuide = () => {
                 Can I change the Pomodoro length?
               </h4>
               <p className="text-sm text-foreground/70 leading-relaxed">
-                Yes! While 25 minutes is traditional, you can adjust based on your needs. 
-                Some prefer 50-minute deep work sessions, while others do better with 
+                Yes! While 25 minutes is traditional, you can adjust based on your needs.
+                Some prefer 50-minute deep work sessions, while others do better with
                 15-minute sprints. Experiment to find what works for you.
+              </p>
+            </article>
+            <article className="glass-card rounded-xl p-5">
+              <h4 className="font-semibold text-foreground mb-2">
+                Is Pomodoro good for studying?
+              </h4>
+              <p className="text-sm text-foreground/70 leading-relaxed">
+                Yes, the Pomodoro Technique is highly effective for studying as it boosts focus, reduces burnout by incorporating breaks, and makes daunting tasks manageable by breaking them into short, timed (usually 25-min) intervals, helping build consistent study habits and improve time management.
+              </p>
+            </article>
+            <article className="glass-card rounded-xl p-5">
+              <h4 className="font-semibold text-foreground mb-2">
+                Does Pomodoro help with ADHD?
+              </h4>
+              <p className="text-sm text-foreground/70 leading-relaxed">
+                Yes, the Pomodoro Technique often works very well for ADHD by breaking overwhelming tasks into short, manageable bursts (e.g., 25 mins work, 5 mins break), combating procrastination, time blindness, and distraction through clear start/stop signals and built-in rest, but it requires customization (adjusting timers) to fit individual focus needs.
+              </p>
+            </article>
+            <article className="glass-card rounded-xl p-5">
+              <h4 className="font-semibold text-foreground mb-2">
+                For what tasks Pomodoro Technique work best?
+              </h4>
+              <p className="text-sm text-foreground/70 leading-relaxed">
+                Pomodoro works best for tasks requiring sustained focus, breaking down large projects, tackling tedious/boring work, and overcoming procrastination, such as studying, writing, coding, or administrative tasks.
               </p>
             </article>
           </div>
