@@ -7,6 +7,7 @@ import TaskList from "@/components/timer/TaskList";
 import PomodoroStats from "@/components/timer/PomodoroStats";
 import PomodoroGuide from "@/components/PomodoroGuide";
 import { Timer } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const {
@@ -33,8 +34,8 @@ const Index = () => {
     mode === "focus"
       ? "mode-focus"
       : mode === "shortBreak"
-      ? "mode-shortbreak"
-      : "mode-longbreak";
+        ? "mode-shortbreak"
+        : "mode-longbreak";
 
   const currentTask = tasks.find((t) => t.id === currentTaskId);
 
@@ -110,8 +111,8 @@ const Index = () => {
               {mode === "focus"
                 ? "Time to focus!"
                 : mode === "shortBreak"
-                ? "Take a short break"
-                : "Take a long break"}
+                  ? "Take a short break"
+                  : "Take a long break"}
             </p>
             {currentTask && mode === "focus" && (
               <p className="text-foreground font-medium text-lg">
@@ -163,11 +164,12 @@ const Index = () => {
         <PomodoroGuide />
 
         {/* Footer */}
-        <footer className="py-8 text-center border-t border-foreground/10 mt-16">
+        {/* <footer className="py-8 text-center border-t border-foreground/10 mt-16">
           <p className="text-sm text-foreground/50">
             © 2025 FocusFlow. Free Pomodoro Timer for students, developers, and professionals.
           </p>
-        </footer>
+        </footer> */}
+        <Footer />
       </div>
     </main>
   );
