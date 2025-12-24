@@ -75,6 +75,9 @@ const FocusTimer = () => {
               <p className="text-lg text-foreground/70 max-w-4xl mx-auto leading-relaxed mb-8">
                 Many students believe studying longer means studying better. In reality, unstructured study hours often lead to distraction, mental exhaustion, and poor retention.
               </p>
+
+
+              
               <h2 id="guide-heading" className="text-2xl md:text-2xl font-bold text-foreground mb-4">
                 Traditional Studying
               </h2>
@@ -89,6 +92,9 @@ const FocusTimer = () => {
                 </ul>
                 Traditional studying methods often lack structure and time-bound goals, leading to inefficiency and burnout.
               </p>
+
+
+
               <h2 id="guide-heading" className="text-2xl md:text-2xl font-bold text-foreground mb-4">
                 Pomodoro-Based Focus Timer
               </h2>
@@ -104,6 +110,9 @@ const FocusTimer = () => {
                 </ul>
                 The Pomodoro focus timer creates a rhythm that enhances concentration, reduces procrastination, and improves overall productivity.
               </p>
+
+
+
               <h2 id="guide-heading" className="text-2xl md:text-2xl font-bold text-foreground mb-4">
                 Key Benefits of Using a Focus Timer Daily
               </h2>

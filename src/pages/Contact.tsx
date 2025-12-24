@@ -5,8 +5,9 @@ import { Helmet } from "react-helmet-async";
 const Contact = () => (
   <>
     <Helmet>
-      <title>Contact Us - FocusFlow</title>
-      <meta name="description" content="Get in touch with the FocusFlow team. We'd love to hear your questions, feedback, or suggestions to help us improve your productivity experience." />
+      <title>Contact Us – Pomodoro Study Timer Support & Feedback</title>
+      <meta name="description" content="Contact us to share feedback, report issues, or ask questions about our Pomodoro study timer.
+We’re here to help students and productivity-focused learners." />
     </Helmet>
     <main className="min-h-screen gradient-bg transition-all duration-700">
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -23,40 +24,15 @@ const Contact = () => (
       <div className="relative z-10 container mx-auto px-4 py-8">
         <header className="flex items-center justify-center gap-3 mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
-            Contact Us
+            Contact Us – Pomodoro Study Timer Support & Feedback
           </h1>
         </header>
         <section className="py-8 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg text-foreground/70 mb-8">
-              Have questions, feedback, or suggestions? We'd love to hear from you!
+              We’d love to hear from you. If you have feedback, suggestions, or run into any issues, feel free to reach out. Your thoughts help us improve the study timer for everyone. Whether it’s a feature request or a small bug, we’re listening. You can contact us anytime via email. We aim to respond as quickly as possible. Thanks for using our Pomodoro study timer and trusting us with your focus.
             </p>
-            <form className="space-y-4 max-w-md mx-auto">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-4 py-2 rounded border border-foreground/20 bg-foreground text-background focus:outline-none"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-2 rounded border border-foreground/20 bg-foreground  text-background focus:outline-none"
-                required
-              />
-              <textarea
-                placeholder="Your Message"
-                className="w-full px-4 py-2 rounded border border-foreground/20 bg-foreground text-background focus:outline-none"
-                rows={5}
-                required
-              />
-              <button
-                type="submit"
-                className="w-full py-2 rounded bg-primary text-grey-400 font-semibold hover:bg-primary/90 transition"
-              >
-                Send Message
-              </button>
-            </form>
+
           </div>
         </section>
         <Footer />
